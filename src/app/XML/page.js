@@ -1,8 +1,7 @@
-import Image from "next/image";
-import Formatter from "@/components/Formatter";
-export default function Home() {
+import XMLFormatter from "@/components/XMLFormatter";
+export default function DiffFinder() {
   return (
-    <>
+<>
         <div className="max-w-7xl mx-auto py-8 px-4">
 
     <div className="text-center">
@@ -13,7 +12,7 @@ export default function Home() {
         </h1>
       </div>
       </div>
-        <Formatter/>
-        </>
-  );
+        <XMLFormatter/>
+        </> 
+        );
 }

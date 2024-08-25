@@ -1,0 +1,61 @@
+.Formatter {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+    gap: 20px;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.Formatter textarea {
+    height: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    color: #4486ff;
+    background: #dce3e2;
+    border-radius: 10px;
+    outline: none;
+    resize: none;
+    font-family: monospace;
+    transition: background 0.25s, color 0.25s;
+    box-shadow: 0px 0px 15px 0px rgb(0 0 0);
+}
+
+.Formatter button {
+    padding: 8px 14px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: rgb(34 197 96);
+    color: #ffffff;
+    text-transform: uppercase;
+    /* font-weight: bold; */
+    /* font-family: 'Oxygen'; */
+    transition: all 0.3s ease-in-out;
+}
+
+.Formatter button:hover {
+    background-color: #4486BC;
+}
+
+.indentation-controls {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.indentation-controls button {
+    padding: 5px 10px;
+}
+
+.indentation-controls span {
+    margin: 0 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
