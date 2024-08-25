@@ -6,9 +6,9 @@ export default function DiffFinder() {
 
     <div className="text-center">
         <h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl">
-          Format JSON beautify JSON make it Readable with  
+          Format XML beautify XML make it Readable with  
           <br />
-          <span className="text-green-500">JSON Formatter</span>
+          <span className="text-green-500">XML Formatter</span>
         </h1>
       </div>
       </div>

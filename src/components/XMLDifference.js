@@ -29,15 +29,15 @@ const XMLDifference = () => {
     <div className="max-w-7xl mx-auto py-8 px-4">
       <div className="text-center mb-12">
         <h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl">
-          Find Difference Between JSON with our  
+          Find Difference Between XML with our  
           <br />
-          <span className="text-green-500">JSON Difference Finder</span>
+          <span className="text-green-500">XML Difference Finder</span>
         </h1>
       </div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
 
         <div className="md:col-span-1">
-          <label className="block text-gray-700 mb-2">Original JSON</label>
+          <label className="block text-gray-700 mb-2">Original XML</label>
           <textarea
             rows={12}
             style={{
@@ -60,7 +60,7 @@ const XMLDifference = () => {
         </div>
 
         <div className="md:col-span-1">
-          <label className="block text-gray-700 mb-2">Modified JSON</label>
+          <label className="block text-gray-700 mb-2">Modified XML</label>
           <textarea
             rows={12}
             style={{

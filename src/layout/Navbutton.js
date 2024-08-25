@@ -7,8 +7,9 @@ export default function NavButton() {
 
   const menuItems = [
     { name: "JSON Formatter", href: "/" },
-    { name: "difference finder", href: "/diffFinder" },
+    { name: "JSON Difference Finder", href: "/diffFinder" },
     { name: "XML Formatter", href: "/XML" },
+    { name: "XML Difference Finder", href: "/XMLDiff" },
     { name: "API tester", href: "/APItester" },
     { name: "base64Converter", href: "/base64" },
     { name: "About", href: "/about" },
