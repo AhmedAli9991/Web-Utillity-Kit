@@ -7,7 +7,6 @@ import NavButton from './Navbutton';
 export default function Navbar() {
 
   const pathname = usePathname()
-  console.log(pathname)
   const menuItems = [
     { name: "JSON Formatter", href: "/" },
     { name: "JSON Difference Finder", href: "/diffFinder" },

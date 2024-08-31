@@ -1,10 +1,10 @@
 "use client"
-
+import { usePathname } from 'next/navigation'
 import Link from 'next/link';
 import { useState } from 'react';
 export default function NavButton() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const pathname = usePathname()
   const menuItems = [
     { name: "JSON Formatter", href: "/" },
     { name: "JSON Difference Finder", href: "/diffFinder" },
@@ -77,11 +77,11 @@ export default function NavButton() {
               <li key={index}>
                 <Link
                   href={item.href}
-                  className={`block px-4 py-2 text-lg rounded ${
-                    index === 2
-                      ? "text-blue-500"                      
-                      : "text-gray-700"
-                  }`}
+                  className={`hover:text-blue-500 transition-colors duration-300 ${
+                pathname === item.href
+                  ? "text-blue-500"                 
+                  : "text-gray-700"
+              }`}
                 >
                   {item.name}
                 </Link>
