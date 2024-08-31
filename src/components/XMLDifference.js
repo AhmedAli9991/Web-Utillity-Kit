@@ -1,39 +1,74 @@
 "use client"
 import { useState, useMemo } from 'react'
 import dynamic from 'next/dynamic'
+import {tool} from 'diff-js-xml'
 import { getDiff } from 'json-difference'
 import "../styles/Formatter.css"
+import JsonView from "@uiw/react-json-view";
 
 const XMLDifference = () => {
-  const [oldJson, setOldJson] = useState('{}')
-  const [newJson, setNewJson] = useState('{}')
+  const Quote = JsonView.Quote;
+  const [oldJson, setOldJson] = useState('')
+  const [newJson, setNewJson] = useState('')
   const result = useMemo(() => {
     try {
-      const oldJsonParsed = JSON.parse(oldJson)
-      const newJsonParsed = JSON.parse(newJson)
+      
+      const tool = require('diff-js-xml');
+ 
+      let delta 
+      tool.diffAsXml(oldJson, newJson, null, null, (result,error) => {
+        try{
+        delta=result}
+        catch(err){
+          console.log(error)
+        }  
+        });
 
-      const delta = getDiff(oldJsonParsed, newJsonParsed)
-
-      return {
-        delta: JSON.stringify(delta, null, 2),
-        added: Object.keys(delta.added).length,
-        removed: Object.keys(delta.removed).length,
-        edited: Object.keys(delta.edited).length
+      let count1 = 0
+      let count2 = 0
+      let count3 = 0
+      let obj = {
+        added:[],
+        removed:[],
+        changed:[]
       }
+      if(!delta.length<1){
+        delta.forEach(e => {
+          if(e.resultType=="difference in element value"){
+            count1 ++
+            obj.changed.push({path:e.path,
+              message:e.message
+            })
+          }
+          if(e.resultType=="missing element"&&e.message.slice(e.message.length-3,e.message.length)=='lhs'){
+            count2 ++
+            obj.added.push({path:e.path,
+              message:e.message
+            })
+          }
+          if(e.resultType=="missing element"&&e.message.slice(e.message.length-3,e.message.length)=='rhs'){
+            count3 ++
+            obj.removed.push({path:e.path,
+              message:e.message
+            })
+          }
+        });}
+      return {
+        delta: obj,
+        added: count2,
+        removed: count3,
+        edited: count1      }
     } catch (error) {
-      return
+      return {delta:{message:"error"},added: 0,
+      removed: 0,
+      edited:0}
+      console.log(error)
     }
   }, [oldJson, newJson])    
 
   return (
     <div className="max-w-7xl mx-auto py-8 px-4">
-      <div className="text-center mb-12">
-        <h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl">
-          Find Difference Between XML with our  
-          <br />
-          <span className="text-green-500">XML Difference Finder</span>
-        </h1>
-      </div>
+      
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
 
         <div className="md:col-span-1">
@@ -41,6 +76,7 @@ const XMLDifference = () => {
           <textarea
             rows={12}
             style={{
+              height: "400px",  // Fixed height in pixels
               padding: "20px",
               boxSizing: "border-box",
               border: "1px solid #000",
@@ -55,7 +91,7 @@ const XMLDifference = () => {
             value={oldJson}
             onChange={(e) => setOldJson(e.target.value)}
             className="w-full border rounded-md"
-            placeholder="Enter original JSON here..."
+            placeholder="Enter original XML here..."
           />
         </div>
 
@@ -64,6 +100,7 @@ const XMLDifference = () => {
           <textarea
             rows={12}
             style={{
+              height: "400px",  // Fixed height in pixels
               padding: "20px",
               boxSizing: "border-box",
               border: "1px solid #000",
@@ -78,32 +115,40 @@ const XMLDifference = () => {
             value={newJson}
             onChange={(e) => setNewJson(e.target.value)}
             className="w-full border rounded-md"
-            placeholder="Enter modified JSON here..."
+            placeholder="Enter modified XML here..."
           />
         </div>
 
         <div className="col-span-1 md:col-span-2 flex flex-col md:flex-row md:space-x-4 mt-6">
           <div className="w-full md:w-1/2">
             <label className="block text-gray-700 mb-2">Difference</label>
-            <textarea
-              rows={12}
-              readOnly
-              style={{
-                padding: "20px",
-                boxSizing: "border-box",
-                border: "1px solid #000",
-                background: "#dce3e2",
-                borderRadius: "10px",
-                outline: "none",
-                resize: "none",
-                fontFamily: "monospace",
-                transition: "background 0.25s, color 0.25s",
-                boxShadow: "0px 0px 15px 0px rgb(0 0 0)"
-              }}
-              value={result?.delta ?? ''}
-              className="w-full border rounded-md"
-              placeholder="Difference will appear here..."
-            />
+            <JsonView
+          className='textarea'
+            value={result?.delta}
+            displayDataTypes={false}
+            enableClipboard={true}
+            collapsed={false}  // Ensures all nodes are expanded; set to true if you want collapsing functionality
+            displayObjectSize={false}
+            shortenTextAfterLength={30000}
+            style={{
+              height: "400px",  // Fixed height in pixels
+              padding: "20px",
+              boxSizing: "border-box",
+              border: "1px solid #000",
+              background: "#dce3e2",
+              borderRadius: "10px",
+              outline: "none",
+              resize: "none",
+              fontFamily: "monospace",
+              transition: "background 0.25s, color 0.25s",
+              boxShadow: "0px 0px 15px 0px rgb(0 0 0)",
+              overflow: "auto" 
+            }}
+          
+
+          >
+          
+          </JsonView>
           </div>
           
           <div className="w-full md:w-1/2 mt-6 md:mt-0">

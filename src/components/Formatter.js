@@ -26,12 +26,16 @@ function Formatter() {
     }
 
     const beautifyHandler = () => {
+        try{
         if ( input ) {
             
             const inputParsed     = JSON.parse( input );
             const beautifiedInput = JSON.stringify( inputParsed, null, 4 );
             setOutput( beautifiedInput );
             setOutput2( inputParsed );
+        }}
+        catch(err){
+            console.log(err)
         }
     }
     // useEffect(()=>{
@@ -93,7 +97,7 @@ function Formatter() {
             enableClipboard={true}
             displayObjectSize={false}
             indentWidth={indentation*2}  // Set indentation width to 4 spaces
-
+            shortenTextAfterLength={30000}
             style={{
                 height: "80%",
                 padding: "20px",
@@ -105,8 +109,9 @@ function Formatter() {
                 resize: "none",
                 fontFamily: "monospace",
                 transition:" background 0.25s, color 0.25s",
-                boxShadow: "0px 0px 15px 0px rgb(0 0 0)"
-            
+                boxShadow: "0px 0px 15px 0px rgb(0 0 0)",
+                overflow: "auto" 
+
             }}
 
           >

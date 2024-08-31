@@ -10,7 +10,6 @@ export default function NavButton() {
     { name: "JSON Difference Finder", href: "/diffFinder" },
     { name: "XML Formatter", href: "/XML" },
     { name: "XML Difference Finder", href: "/XMLDiff" },
-    { name: "API tester", href: "/APItester" },
     { name: "base64Converter", href: "/base64" },
     { name: "About", href: "/about" },
   ];
