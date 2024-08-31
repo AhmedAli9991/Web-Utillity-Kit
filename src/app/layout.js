@@ -24,13 +24,12 @@ export const metadata = {
 
   keywords: "JSON, XML, formatter, difference finder, base64 converter, development tools, JSON Formatter, XML Formatter, XML difference Finder, JSON difference Finder",
   author: "JSON Web Tools",
-  viewport: "width=device-width, initial-scale=1",
   ogTitle: "JSON Web Tools",
   ogDescription: "Tools for formatting JSON with JSON Formatter and XML with XML Formatter, finding differences in JOSN with JSON difference finder and XML with XML difference finder, and converting images to base64. All your development needs in one place.",
-  ogImage: "/path/to/your/image.jpg", // Replace with the path to your Open Graph image
-  ogUrl: "https://yourwebsite.com", // Replace with your actual URL
-  twitterTitle: "JSON Web Tools",
-  twitterDescription: "Tools for formatting JSON with JSON Formatter and XML with XML Formatter, finding differences in JOSN with JSON difference finder and XML with XML difference finder, and converting images to base64. All your development needs in one place.",
+  // ogImage: "/path/to/your/image.jpg", // Replace with the path to your Open Graph image
+  // ogUrl: "https://yourwebsite.com", // Replace with your actual URL
+  // twitterTitle: "JSON Web Tools",
+  // twitterDescription: "Tools for formatting JSON with JSON Formatter and XML with XML Formatter, finding differences in JOSN with JSON difference finder and XML with XML difference finder, and converting images to base64. All your development needs in one place.",
 };
 
 export default function RootLayout({ children }) {
