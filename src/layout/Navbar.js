@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link';
 import NavButton from './Navbutton';
 export default function Navbar() {
+
   const pathname = usePathname()
   console.log(pathname)
   const menuItems = [
@@ -17,9 +18,8 @@ export default function Navbar() {
   ];
   return (
     <nav className="bg-white border-b border-gray-200">
-      <NavButton/>
-
-      <div className="container mx-auto flex items-center justify-between p-4">
+<NavButton/>
+<div className="hidden sm:container sm:mx-auto sm:flex sm:items-center sm:justify-between p-4">
 
         <div className="hidden sm:flex space-x-8 items-center justify-start w-full">
           {menuItems.map((item, index) => (
@@ -37,7 +37,6 @@ export default function Navbar() {
         </div>
 
       </div>
-
 
     </nav>
   );
