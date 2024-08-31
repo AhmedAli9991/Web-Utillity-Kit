@@ -1,4 +1,4 @@
-import Base64 from '@/components/base64'
+import Base64 from "@/components/base64"
 const Base64Convert = () => {
   
 
