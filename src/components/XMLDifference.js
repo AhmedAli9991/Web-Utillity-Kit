@@ -1,16 +1,26 @@
 "use client"
-import { useState, useMemo } from 'react'
+import { useState, useMemo,useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import {tool} from 'diff-js-xml'
 import { getDiff } from 'json-difference'
 import "../styles/Formatter.css"
 import JsonView from "@uiw/react-json-view";
 import AddBanner from "@/adsense/AddBanner";
+import { useDetectAdBlock } from "adblock-detect-react";
 
 const XMLDifference = () => {
   const Quote = JsonView.Quote;
+  const adBlockDetected = useDetectAdBlock();
   const [oldJson, setOldJson] = useState('')
   const [newJson, setNewJson] = useState('')
+  useEffect(() => {
+    console.log('adBlockDetected',adBlockDetected)
+
+    if (adBlockDetected) {
+        console.log(adBlockDetected)
+      window.alert("ad block detected");
+    }
+  }, []);
   const result = useMemo(() => {
     try {
       

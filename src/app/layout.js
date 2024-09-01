@@ -40,9 +40,9 @@ export default function RootLayout({ children }) {
         <AdSense pId="ca-pub-1234567890123456"/>
       </head>
       <body className={inter.className}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+          <Navbar />
+            <main>{children}</main>
+          <Footer />
       </body>
     </html>
   );

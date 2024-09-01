@@ -7,9 +7,11 @@ import { darkTheme } from "@uiw/react-json-view/dark";
 import Switch from "@/buttons/Switch" 
 import XMLViewer from 'react-xml-viewer'
 import AddBanner from "@/adsense/AddBanner";
+import { useDetectAdBlock } from "adblock-detect-react";
 
 function XMLFormatter() {
     const Quote = JsonView.Quote;
+    const adBlockDetected = useDetectAdBlock();
 
     const [input, setInput]   = useState( '' );
     const [output, setOutput] = useState( '' );
@@ -33,6 +35,14 @@ function XMLFormatter() {
             setOutput( input );
         }
     }
+    useEffect(() => {
+        console.log('adBlockDetected',adBlockDetected)
+
+        if (adBlockDetected) {
+            console.log(adBlockDetected)
+          window.alert("ad block detected");
+        }
+      }, []);
     // useEffect(()=>{
     //     beautifyHandler()
     // },[input])
@@ -50,6 +60,7 @@ function XMLFormatter() {
     }
 
     return (
+
         <div className="Formatter">
 
             <textarea 
@@ -57,8 +68,8 @@ function XMLFormatter() {
                 onChange={handleInputChange}
                 placeholder="paste your XML here..."
                 language="json"
-
-            ></textarea>
+                
+                ></textarea>
 
             <div>
             <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 mb-4">
@@ -66,7 +77,7 @@ function XMLFormatter() {
                 dataAdFormat="auto"
                 dataFullWidthResponsive={true}
                 dataAdSlot="4284247248"
-              />
+                />
             </div>
                 <button type="button" onClick={beautifyHandler}>Format</button>
 
@@ -77,14 +88,14 @@ function XMLFormatter() {
                 dataAdFormat="auto"
                 dataFullWidthResponsive={true}
                 dataAdSlot="4284247248"
-              />
+                />
             </div>
             </div>
 {/* 
             <textarea 
-                value={output} 
-                readOnly 
-                placeholder="formatted JSON..."
+            value={output} 
+            readOnly 
+            placeholder="formatted JSON..."
             ></textarea> */}
         
         <div style={{
@@ -99,32 +110,32 @@ function XMLFormatter() {
             fontFamily: "monospace",
             transition:" background 0.25s, color 0.25s",
             boxShadow: "0px 0px 15px 0px rgb(0 0 0)"
-        
+            
         }}>
           <XMLViewer
           className='textarea'
-            xml={output}
-            // collapsed={3}
-            // enableClipboard={true}
-            // displayObjectSize={false}
-            // indentWidth={indentation*2}  // Set indentation width to 4 spaces
-
-            style={{
-                height: "80%",
-                padding: "20px",
-                boxSizing: "border-box",
-                border: "1px solid #000",
-                background: "#dce3e2",
-                borderRadius: "10px",
-                outline: "none",
-                resize: "none",
-                fontFamily: "monospace",
-                transition:" background 0.25s, color 0.25s",
-                boxShadow: "0px 0px 15px 0px rgb(0 0 0)"
-            
+          xml={output}
+          // collapsed={3}
+          // enableClipboard={true}
+          // displayObjectSize={false}
+          // indentWidth={indentation*2}  // Set indentation width to 4 spaces
+          
+          style={{
+              height: "80%",
+              padding: "20px",
+              boxSizing: "border-box",
+              border: "1px solid #000",
+              background: "#dce3e2",
+              borderRadius: "10px",
+              outline: "none",
+              resize: "none",
+              fontFamily: "monospace",
+              transition:" background 0.25s, color 0.25s",
+              boxShadow: "0px 0px 15px 0px rgb(0 0 0)"
+              
             }}
-
-          >
+            
+            >
           </XMLViewer>
           </div>      
       </div>

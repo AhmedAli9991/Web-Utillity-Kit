@@ -1,6 +1,7 @@
 // components/Footer.js
 import React from 'react';
 import AddBanner from "@/adsense/AddBanner";
+import { useDetectAdBlock } from "adblock-detect-react";
 
 const Footer = () => {
   return (

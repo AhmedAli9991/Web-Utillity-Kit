@@ -1,5 +1,6 @@
 "use client"
 import AddBanner from "@/adsense/AddBanner";
+import { useDetectAdBlock } from "adblock-detect-react";
 
 import { useState,useEffect } from 'react';
 import "../styles/Formatter.css"
@@ -8,7 +9,16 @@ import { darkTheme } from "@uiw/react-json-view/dark";
 import Switch from "@/buttons/Switch" 
 function Formatter() {
     const Quote = JsonView.Quote;
+    const adBlockDetected = useDetectAdBlock();
 
+    useEffect(() => {
+        console.log('adBlockDetected',adBlockDetected)
+
+        if (adBlockDetected) {
+            console.log(adBlockDetected)
+          window.alert("ad block detected");
+        }
+      }, []);
     const [input, setInput]   = useState( '' );
     const [types, setTypes]   = useState( false );
     const [output, setOutput] = useState( '' );

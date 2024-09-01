@@ -9,9 +9,10 @@ const AddBanner = ({
 }) => {
   useEffect(() => {
     try {
-      ((window).adsbygoogle = (window).adsbygoogle || []).push(
-        {}
-      );
+        let adsbygoogle = (window).adsbygoogle 
+        if (adsbygoogle && !adsbygoogle.loaded)
+            (adsbygoogle = (window).adsbygoogle || []).push({});
+      
     } catch (error) {
       console.log(error.message);
     }

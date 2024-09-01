@@ -1,13 +1,22 @@
 "use client"; // Ensure this component is rendered only on the client side
 
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import AddBanner from "@/adsense/AddBanner";
+import { useDetectAdBlock } from "adblock-detect-react";
 
 const Base64 = () => {
   const [file, setFile] = useState(null);
   const [base64, setBase64] = useState('');
   const [error, setError] = useState(null);
+  const adBlockDetected = useDetectAdBlock();
+  useEffect(() => {
+      console.log('adBlockDetected',adBlockDetected)
 
+      if (adBlockDetected) {
+          console.log(adBlockDetected)
+        window.alert("ad block detected");
+      }
+    }, []);
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
