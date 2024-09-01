@@ -1,4 +1,6 @@
 import Base64 from "@/components/Base64"
+import AddBanner from "@/adsense/AddBanner";
+
 const Base64Convert = () => {
   
 
@@ -14,6 +16,13 @@ const Base64Convert = () => {
         </h1>
     </div>
   </div>
+  <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 ">
+              <AddBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4284247248"
+              />
+            </div>
      <Base64/>
     </>
     );

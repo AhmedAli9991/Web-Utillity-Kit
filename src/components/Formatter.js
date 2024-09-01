@@ -1,4 +1,5 @@
 "use client"
+import AddBanner from "@/adsense/AddBanner";
 
 import { useState,useEffect } from 'react';
 import "../styles/Formatter.css"
@@ -66,6 +67,13 @@ function Formatter() {
             ></textarea>
 
             <div>
+            <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 mb-4">
+              <AddBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4284247248"
+              />
+            </div>
                 <button type="button" onClick={beautifyHandler}>Format</button>
                 <div className="indentation-controls">
                 <button type="button" onClick={decreaseIndentation}>-</button>
@@ -79,6 +87,13 @@ function Formatter() {
             {/* <Switch setIsOn={setTypes} isOn={types}/> */}
 
                             <button type="button" onClick={clearHandler}>Clear</button>
+                            <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 ">
+              <AddBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4284247248"
+              />
+            </div>
             </div>
 {/* 
             <textarea 

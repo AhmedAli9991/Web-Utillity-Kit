@@ -1,4 +1,6 @@
 import XMLFormatter from "@/components/XMLFormatter";
+import AddBanner from "@/adsense/AddBanner";
+
 export default function DiffFinder() {
   return (
 <>
@@ -12,6 +14,13 @@ export default function DiffFinder() {
         </h1>
       </div>
       </div>
+      <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 ">
+              <AddBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4284247248"
+              />
+            </div>
         <XMLFormatter/>
         </> 
         );

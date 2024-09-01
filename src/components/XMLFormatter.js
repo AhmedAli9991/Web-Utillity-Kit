@@ -6,6 +6,7 @@ import JsonView from "@uiw/react-json-view";
 import { darkTheme } from "@uiw/react-json-view/dark";
 import Switch from "@/buttons/Switch" 
 import XMLViewer from 'react-xml-viewer'
+import AddBanner from "@/adsense/AddBanner";
 
 function XMLFormatter() {
     const Quote = JsonView.Quote;
@@ -60,10 +61,24 @@ function XMLFormatter() {
             ></textarea>
 
             <div>
+            <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 mb-4">
+              <AddBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4284247248"
+              />
+            </div>
                 <button type="button" onClick={beautifyHandler}>Format</button>
 
 
                     <button type="button" onClick={clearHandler}>Clear</button>
+                    <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 ">
+              <AddBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4284247248"
+              />
+            </div>
             </div>
 {/* 
             <textarea 

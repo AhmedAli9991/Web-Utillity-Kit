@@ -1,8 +1,17 @@
 // components/Footer.js
 import React from 'react';
+import AddBanner from "@/adsense/AddBanner";
 
 const Footer = () => {
   return (
+    <>
+      <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 mb-2 ">
+              <AddBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4284247248"
+              />
+            </div>
     <footer className="bg-gray-800 text-white py-4">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
         <p className="text-center md:text-left text-sm">
@@ -15,6 +24,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

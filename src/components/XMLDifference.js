@@ -5,6 +5,7 @@ import {tool} from 'diff-js-xml'
 import { getDiff } from 'json-difference'
 import "../styles/Formatter.css"
 import JsonView from "@uiw/react-json-view";
+import AddBanner from "@/adsense/AddBanner";
 
 const XMLDifference = () => {
   const Quote = JsonView.Quote;
@@ -158,7 +159,15 @@ const XMLDifference = () => {
                 ? `${result?.added} fields were added, ${result?.removed} removed, and ${result?.edited} edited!`
                 : 'Add JSON data to see the difference.'}
             </div>
+            <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 mt-4">
+              <AddBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4284247248"
+              />
+            </div>
           </div>
+          
         </div>
         
       </div>

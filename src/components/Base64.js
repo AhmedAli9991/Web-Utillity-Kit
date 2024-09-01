@@ -1,6 +1,7 @@
 "use client"; // Ensure this component is rendered only on the client side
 
 import { useState } from 'react';
+import AddBanner from "@/adsense/AddBanner";
 
 const Base64 = () => {
   const [file, setFile] = useState(null);
@@ -64,7 +65,21 @@ const Base64 = () => {
             placeholder="Base64 will appear here"
           />
         </div>
+        <div className="bg-gray-800 max-w-7xl py-10 px-4 mt-4">
+              <AddBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4284247248"
+              />
+            </div>
       </div>
+      <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 mt-4">
+              <AddBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4284247248"
+              />
+            </div>
     </div>
   );
 };
