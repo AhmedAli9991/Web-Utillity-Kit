@@ -7,7 +7,6 @@ const AddBanner = ({
   dataAdFormat,
   dataFullWidthResponsive,
 }) => {
-    const [adblock,useAddblock] = React.useState(false)
   useEffect(() => {
     try {
         let adsbygoogle = (window).adsbygoogle 
@@ -15,8 +14,6 @@ const AddBanner = ({
             (adsbygoogle = (window).adsbygoogle || []).push({});
       
     } catch (error) {
-        useAddblock(true)
-        console.log('adblock',adblock)
       console.log(error.message);
 
     }
