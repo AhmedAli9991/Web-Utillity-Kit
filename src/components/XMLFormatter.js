@@ -34,7 +34,6 @@ function XMLFormatter() {
             setOutput( input );
         }
     }
-   
     // useEffect(()=>{
     //     beautifyHandler()
     // },[input])
