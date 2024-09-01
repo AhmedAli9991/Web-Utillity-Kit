@@ -6,6 +6,7 @@ import "../styles/Formatter.css"
 import JsonView from "@uiw/react-json-view";
 import AddBanner from "@/adsense/AddBanner";
 import { useDetectAdBlock } from "adblock-detect-react";
+import AddBlock from "@/adsense/AddBlock";
 
 const Differencefinder = () => {
   const Quote = JsonView.Quote;
@@ -43,6 +44,7 @@ const Differencefinder = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-8 px-4">
+            <AddBlock/>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
 

@@ -8,6 +8,7 @@ import Switch from "@/buttons/Switch"
 import XMLViewer from 'react-xml-viewer'
 import AddBanner from "@/adsense/AddBanner";
 import { useDetectAdBlock } from "adblock-detect-react";
+import AddBlock from "@/adsense/AddBlock";
 
 function XMLFormatter() {
     const Quote = JsonView.Quote;
@@ -72,6 +73,7 @@ function XMLFormatter() {
                 ></textarea>
 
             <div>
+            <AddBlock/>
             <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 mb-4">
               <AddBanner
                 dataAdFormat="auto"

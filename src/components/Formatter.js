@@ -6,6 +6,7 @@ import { useState,useEffect } from 'react';
 import "../styles/Formatter.css"
 import JsonView from "@uiw/react-json-view";
 import { darkTheme } from "@uiw/react-json-view/dark";
+import AddBlock from "@/adsense/AddBlock";
 import Switch from "@/buttons/Switch" 
 function Formatter() {
     const Quote = JsonView.Quote;
@@ -67,7 +68,6 @@ function Formatter() {
 
     return (
         <div className="Formatter">
-
             <textarea 
                 value={input} 
                 onChange={handleInputChange}
@@ -77,7 +77,10 @@ function Formatter() {
             ></textarea>
 
             <div>
+            <AddBlock/>
+
             <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 mb-4">
+
               <AddBanner
                 dataAdFormat="auto"
                 dataFullWidthResponsive={true}

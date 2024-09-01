@@ -3,6 +3,7 @@
 import { useState,useEffect } from 'react';
 import AddBanner from "@/adsense/AddBanner";
 import { useDetectAdBlock } from "adblock-detect-react";
+import AddBlock from "@/adsense/AddBlock";
 
 const Base64 = () => {
   const [file, setFile] = useState(null);
@@ -45,6 +46,8 @@ const Base64 = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-8 px-4">
+      
+      <AddBlock/>
       <input
         type="file"
         onChange={handleFileChange}
