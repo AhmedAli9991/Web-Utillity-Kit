@@ -6,22 +6,13 @@ import { getDiff } from 'json-difference'
 import "../styles/Formatter.css"
 import JsonView from "@uiw/react-json-view";
 import AddBanner from "@/adsense/AddBanner";
-import { useDetectAdBlock } from "adblock-detect-react";
 import AddBlock from "@/adsense/AddBlock";
 
 const XMLDifference = () => {
   const Quote = JsonView.Quote;
-  const adBlockDetected = useDetectAdBlock();
   const [oldJson, setOldJson] = useState('')
   const [newJson, setNewJson] = useState('')
-  useEffect(() => {
-    console.log('adBlockDetected',adBlockDetected)
-
-    if (adBlockDetected) {
-        console.log(adBlockDetected)
-      window.alert("ad block detected");
-    }
-  }, []);
+ 
   const result = useMemo(() => {
     try {
       

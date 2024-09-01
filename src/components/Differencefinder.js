@@ -5,20 +5,10 @@ import { getDiff } from 'json-difference'
 import "../styles/Formatter.css"
 import JsonView from "@uiw/react-json-view";
 import AddBanner from "@/adsense/AddBanner";
-import { useDetectAdBlock } from "adblock-detect-react";
 import AddBlock from "@/adsense/AddBlock";
 
 const Differencefinder = () => {
   const Quote = JsonView.Quote;
-  const adBlockDetected = useDetectAdBlock();
-  useEffect(() => {
-      console.log('adBlockDetected',adBlockDetected)
-
-      if (adBlockDetected) {
-          console.log(adBlockDetected)
-        window.alert("ad block detected");
-      }
-    }, []);
   const [oldJson, setOldJson] = useState('{}')
   const [newJson, setNewJson] = useState('{}')
   const result = useMemo(() => {

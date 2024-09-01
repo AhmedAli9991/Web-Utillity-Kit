@@ -7,12 +7,10 @@ import { darkTheme } from "@uiw/react-json-view/dark";
 import Switch from "@/buttons/Switch" 
 import XMLViewer from 'react-xml-viewer'
 import AddBanner from "@/adsense/AddBanner";
-import { useDetectAdBlock } from "adblock-detect-react";
 import AddBlock from "@/adsense/AddBlock";
 
 function XMLFormatter() {
     const Quote = JsonView.Quote;
-    const adBlockDetected = useDetectAdBlock();
 
     const [input, setInput]   = useState( '' );
     const [output, setOutput] = useState( '' );
@@ -36,14 +34,7 @@ function XMLFormatter() {
             setOutput( input );
         }
     }
-    useEffect(() => {
-        console.log('adBlockDetected',adBlockDetected)
-
-        if (adBlockDetected) {
-            console.log(adBlockDetected)
-          window.alert("ad block detected");
-        }
-      }, []);
+   
     // useEffect(()=>{
     //     beautifyHandler()
     // },[input])
