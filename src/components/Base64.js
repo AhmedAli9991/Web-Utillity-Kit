@@ -67,7 +67,7 @@ const Base64 = () => {
             placeholder="Base64 will appear here"
           />
         </div>
-        <div className="bg-gray-800 max-w-7xl py-10 px-4 mt-4">
+        <div className="max-w-7xl py-10 px-4 mt-4">
               <AddBanner
                 dataAdFormat="auto"
                 dataFullWidthResponsive={true}
@@ -75,7 +75,7 @@ const Base64 = () => {
               />
             </div>
       </div>
-      <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 mt-4">
+      <div className="max-w-7xl mx-auto py-10 px-4 mt-4">
               <AddBanner
                 dataAdFormat="auto"
                 dataFullWidthResponsive={true}

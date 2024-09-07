@@ -6,7 +6,7 @@ import { useDetectAdBlock } from "adblock-detect-react";
 const Footer = () => {
   return (
     <>
-      <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 mb-2 ">
+      <div className="max-w-7xl mx-auto py-10 px-4 mb-2 ">
               <AddBanner
                 dataAdFormat="auto"
                 dataFullWidthResponsive={true}

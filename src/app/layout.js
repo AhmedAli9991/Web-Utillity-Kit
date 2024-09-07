@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <AdSense pId="ca-pub-1234567890123456"/>
+        <AdSense pId="ca-pub-2860851484242043"/>
       </head>
       <body className={inter.className}>
           <Navbar />

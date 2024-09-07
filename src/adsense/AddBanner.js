@@ -2,20 +2,12 @@
 
 import React, { useEffect } from "react";
 
-const AddBanner = ({
-  dataAdSlot,
-  dataAdFormat,
-  dataFullWidthResponsive,
-}) => {
+const AddBanner = (props) => {
   useEffect(() => {
     try {
-        let adsbygoogle = (window).adsbygoogle 
-        if (adsbygoogle && !adsbygoogle.loaded)
-            (adsbygoogle = (window).adsbygoogle || []).push({});
-      
-    } catch (error) {
-      console.log(error.message);
-
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.log(err);
     }
   }, []);
 
@@ -23,11 +15,14 @@ const AddBanner = ({
     <ins
     //   className="adsbygoogle"
       style={{ display: "block" }}
-      data-ad-client="ca-pub-123456789"
-      data-ad-slot={dataAdSlot}
-      data-ad-format={dataAdFormat}
-      data-full-width-responsive={dataFullWidthResponsive.toString()}
-    ></ins>
+      data-ad-client="ca-pub-2860851484242043"
+      data-ad-slot="4360908337"
+      //  data-ad-slot={dataAdSlot}
+      data-ad-format="auto"
+
+      // data-ad-format={dataAdFormat}
+      data-full-width-responsive="true"
+      ></ins>
   );
 };
 

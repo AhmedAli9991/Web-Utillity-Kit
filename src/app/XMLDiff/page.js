@@ -15,7 +15,7 @@ export default function DiffFinder() {
         </h1>
       </div>
     </div>
-    <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 ">
+    <div className="max-w-7xl mx-auto py-10 px-4 ">
               <AddBanner
                 dataAdFormat="auto"
                 dataFullWidthResponsive={true}

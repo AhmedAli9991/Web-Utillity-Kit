@@ -123,7 +123,7 @@ const Differencefinder = () => {
                 ? `${result?.added} fields were added, ${result?.removed} removed, and ${result?.edited} edited!`
                 : 'Add JSON data to see the difference.'}
             </div>
-          <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 mt-4">
+          <div className="max-w-7xl mx-auto py-10 px-4 mt-4">
               <AddBanner
                 dataAdFormat="auto"
                 dataFullWidthResponsive={true}

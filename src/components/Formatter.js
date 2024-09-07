@@ -68,12 +68,11 @@ function Formatter() {
             <div>
             <AddBlock/>
 
-            <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 mb-4">
+            <div className="max-w-7xl mx-auto py-10 px-4 mb-4">
 
               <AddBanner
                 dataAdFormat="auto"
                 dataFullWidthResponsive={true}
-                dataAdSlot="4284247248"
               />
             </div>
                 <button type="button" onClick={beautifyHandler}>Format</button>
@@ -89,7 +88,7 @@ function Formatter() {
             {/* <Switch setIsOn={setTypes} isOn={types}/> */}
 
                             <button type="button" onClick={clearHandler}>Clear</button>
-                            <div className="bg-gray-800 max-w-7xl mx-auto py-10 px-4 ">
+                            <div className="max-w-7xl mx-auto py-10 px-4 ">
               <AddBanner
                 dataAdFormat="auto"
                 dataFullWidthResponsive={true}
