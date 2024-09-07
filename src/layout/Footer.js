@@ -2,6 +2,7 @@
 import React from 'react';
 import AddBanner from "@/adsense/AddBanner";
 import { useDetectAdBlock } from "adblock-detect-react";
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -19,9 +20,9 @@ const Footer = () => {
           © {new Date().getFullYear()} JSON web tools. All rights reserved.
         </p>
         <div className="flex space-x-4 mt-2 md:mt-0">
-          <a href="/about" className="hover:underline text-sm">About</a>
-          <a href="/contact" className="hover:underline text-sm">Contact</a>
-          <a href="/privacy" className="hover:underline text-sm">Privacy Policy</a>
+          <Link href="/about" className="hover:underline text-sm">About</Link>
+          <Link href="/contact" className="hover:underline text-sm">Contact</Link>
+          <Link href="/privacy" className="hover:underline text-sm">Privacy Policy</Link>
         </div>
       </div>
     </footer>

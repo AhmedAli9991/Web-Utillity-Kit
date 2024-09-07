@@ -1,15 +1,20 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 
 const AddBanner = (props) => {
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
   useEffect(() => {
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (err) {
-      console.log(err);
+    if (!scriptLoaded) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+      document.head.appendChild(script);
+      setScriptLoaded(true);
     }
-  }, []);
+  }, [scriptLoaded]);
+
 
   return (
     <ins
