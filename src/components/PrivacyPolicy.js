@@ -11,7 +11,7 @@ const PrivacyPolicy = () => {
       
       <h2 className="text-2xl font-semibold mt-8 mb-4">Introduction</h2>
       <p>
-        Welcome to [Your Website Name]. We value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website [Your Website URL].
+        Welcome to https://jsonwebtools.com. We value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website [Your Website URL].
       </p>
 
       <h2 className="text-2xl font-semibold mt-8 mb-4">Information We Collect</h2>
@@ -43,7 +43,7 @@ const PrivacyPolicy = () => {
 
       <h2 className="text-2xl font-semibold mt-8 mb-4">Google Ads</h2>
       <p>
-        We use Google AdSense to serve ads on our website. Google AdSense uses cookies to display ads based on your prior visits to our website or other sites on the internet. You can opt-out of personalized advertising by visiting <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Google's Ads Settings</a>.
+        We use Google AdSense to serve ads on our website. Google AdSense uses cookies to display ads based on your prior visits to our website or other sites on the internet. You can opt-out of personalized advertising by visiting <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">{"Google's Ads Settings"}</a>.
       </p>
 
       <h2 className="text-2xl font-semibold mt-8 mb-4">Third-Party Services</h2>
@@ -64,7 +64,7 @@ const PrivacyPolicy = () => {
         You have the right to access, correct, or delete your personal information. To exercise your rights, please contact us at [Your Contact Email Address].
       </p>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-4">Children’s Privacy</h2>
+      <h2 className="text-2xl font-semibold mt-8 mb-4">{"Children’s Privacy"}</h2>
       <p>
         Our website is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected such information, we will take steps to delete it.
       </p>
