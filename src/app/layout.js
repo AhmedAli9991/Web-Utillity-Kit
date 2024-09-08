@@ -8,7 +8,10 @@ import AdSense from "@/adsense/Adsense";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Web utility kit",
+  title: {
+    default: "JSON Web Tools",
+    template: "%s - JSON Web Tools",
+  },
   description: `We provide a range of tools designed to make your
               daily development tasks easier, from formatting JSON with our JSON formatter tool,
               finding differences between two JSONs with our JSON difference finder tool,we also provide
@@ -23,10 +26,10 @@ export const metadata = {
     shortcut: { url: "/favicon.ico", type: "image/ico" },
   },
 
-  keywords: "JSON, XML, formatter, difference finder, base64 converter, development tools, JSON Formatter, XML Formatter, XML difference Finder, JSON difference Finder",
+  keywords: "JSON, XML, formatter, difference finder, base64 converter, development tools, JSON Beautifier, JSON Formatter, XML Formatter, XML difference Finder, JSON difference Finder",
   author: "JSON Web Tools",
   ogTitle: "JSON Web Tools",
-  ogDescription: "Tools for formatting JSON with JSON Formatter and XML with XML Formatter, finding differences in JOSN with JSON difference finder and XML with XML difference finder, and converting images to base64. All your development needs in one place.",
+  ogDescription: "Tools for formatting JSON with JSON Formatter and XML with XML Formatter, XML Beautifier, finding differences in JOSN with JSON difference finder and XML with XML difference finder, and converting images to base64. All your development needs in one place.",
   // ogImage: "/path/to/your/image.jpg", // Replace with the path to your Open Graph image
   // ogUrl: "https://yourwebsite.com", // Replace with your actual URL
   // twitterTitle: "JSON Web Tools",

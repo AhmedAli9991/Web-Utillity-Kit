@@ -1,7 +1,7 @@
-import PrivacyPolicy from "@/components/PrivacyPolicy";
-
+import ContactUs from "@/components/ContactUs";
+import AddBanner from "@/adsense/AddBanner";
 export const metadata = {
-    title: "Privacy Policy",
+    title: "Contact Us",
     description: `We provide a range of tools designed to make your
                 daily development tasks easier, from formatting JSON with our JSON formatter tool,
                 finding differences between two JSONs with our JSON difference finder tool,we also provide
@@ -18,10 +18,17 @@ export const metadata = {
     // twitterTitle: "JSON Web Tools",
     // twitterDescription: "Tools for formatting JSON with JSON Formatter and XML with XML Formatter, finding differences in JOSN with JSON difference finder and XML with XML difference finder, and converting images to base64. All your development needs in one place.",
   };
-export default  function Privacy(){
-    return (
-        <PrivacyPolicy/>
-    );
-  };
-  
- 
+export default function DiffFinder() {
+  return (
+    <>
+    <ContactUs/>
+      <div className="max-w-7xl mx-auto py-10 px-4 ">
+              <AddBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="4284247248"
+              />
+            </div>
+  </>
+  );
+}
