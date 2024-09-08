@@ -6,6 +6,6 @@ export default function robots() {
           allow: "/",
         },
       ],
-      sitemap: `https://https://jsonwebtools.netlify.app/sitemap.xml`,
+      sitemap: `https://jsonwebtools.netlify.app/sitemap.xml`,
     };
   }
